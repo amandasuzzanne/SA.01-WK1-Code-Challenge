@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Generator</title>
+</head>
+
+<body>
+    <script>
+        // Function to calculate grade based on marks provided
+        function calculateGrade(marks) {
+            if (marks > 79) {
+                return 'A';
+            } else if (marks >= 60 && marks <= 79) {
+                return 'B';
+            } else if (marks >= 49 && marks <= 59) {
+                return 'C';
+            } else if (marks >= 40 && marks <= 49) {
+                return 'D';
+            } else {
+                return 'E';
+            }
+        }
+
+        // Main function to execute the program
+        function main() {
+            // Prompting the user to input student's marks
+            const input = prompt("Enter student's marks (between 0 and 100):");
+            // Converting input to a floating point number
+            const marks = parseFloat(input); 
+
+            // Validating the input
+            if (!isNaN(marks) && marks >= 0 && marks <= 100) { 
+                // Calculating the grade
+                const grade = calculateGrade(marks);
+                // Displaying the grade on the web page
+                document.write("Grade: " + grade);
+            } else {
+                // Handling invalid input values
+                document.write("Invalid input. Student marks should be between 0 and 100.");
+            }
+        }
+
+        // Calling the main function to start the program
+        main();
+    </script>
+</body>
+
+</html>
