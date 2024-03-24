@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Detector</title>
+</head>
+
+<body>
+    <script>
+        // Function to calculate demerit points based on the speed provided
+        function detectSpeed(speed) {
+            // Define the speed limit
+            const speedLimit = 70;
+            // Initialize points counter
+            let points = 0;
+
+            // Check if the speed is within the allowed limit
+            if (speed <= speedLimit) {
+                return 'Ok';
+            }
+            else {
+                // Calculate demerit points for exceeding the speed limit
+                points = Math.floor((speed - speedLimit) / 5) * 2;
+                if (points > 10) {
+                    return 'License suspended';
+                } else {
+                    return points;
+                }
+            }
+        }
+
+        // Main function to execute the program
+        function main() {
+            const input = prompt('Enter the speed of your car:');
+
+            const speed = parseFloat(input);
+
+            // Validating the input
+            if (!isNaN(speed) && speed >= 0) {
+                // Calculating the points
+                const points = detectSpeed(speed);
+                // Displaying the grade on the web page
+                document.write("Demerit Points: " + points);
+            } else {
+                // Handling invalid input values
+                document.write("Invalid input. Speed should be greater than 100.");
+            }
+        }
+
+        main();
+    </script>
+</body>
+
+</html>
