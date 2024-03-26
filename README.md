@@ -18,3 +18,6 @@ The solution is within the net_salary_calculator.html file
 2. Navigate to the folder you want to work on through the terminal
 3. Clone the repository in your folder
 4. Launch VS Code (or any other code editor) and open the folder
+5. Open the VS Code terminal
+6. Run the command "npm install"
+7. Run the command "npm test"
