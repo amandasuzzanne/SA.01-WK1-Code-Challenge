@@ -63,25 +63,28 @@
                 NHIFDeduction = 1600;
             } else NHIFDeduction = 1700;
 
+            // // Calculating NSSF Deductions
+            // const tierILimit = 7000;
+            // const tierIIStart = 7001;
+            // const tierIILimit = 36000;
+            // // Calculating Tier I
+            // let tierI = 0;
+            // if (gross_salary <= tierI) {
+            //     tierI = gross_salary * 0.06;
+            // } else {
+            //     tierI = tierILimit * 0.06;
+            // }
+            // // Calculating Tier II
+            // let tierII = 0;
+            // if (gross_salary > tierILimit && gross_salary <= tierIILimit) {
+            //     tierII = gross_salary - tierILimit;
+            // } else if (gross_salary > tierIILimit) {
+            //     tierII = tierIILimit - tierILimit;
+            // }
+            // const NSSFDeduction = tierI + tierII;
+
             // Calculating NSSF Deductions
-            const tierILimit = 7000;
-            const tierIIStart = 7001;
-            const tierIILimit = 36000;
-            // Calculating Tier I
-            let tierI = 0;
-            if (gross_salary <= tierI) {
-                tierI = gross_salary * 0.06;
-            } else {
-                tierI = tierILimit * 0.6;
-            }
-            // Calculating Tier II
-            let tierII = 0;
-            if (gross_salary > tierILimit && gross_salary <= tierIILimit) {
-                tierII = gross_salary - tierILimit;
-            } else if (basic_salary > tierIILimit) {
-                tierII = tierIILimit - tierILimit;
-            }
-            const NSSFDeduction = tierI + tierII;
+            let NSSFDeduction = gross_salary * 0.06;
 
             // Calculating Net Salary
             let net_salary = gross_salary - PAYE - NHIFDeduction - NSSFDeduction; 
